@@ -1,11 +1,14 @@
 {
+  "parser": "babel-eslint",
   "ecmaFeatures": {
-    "jsx": true
+    "jsx": true,
+    "modules": true
   },
   "env": {
     "browser": true,
     "node": true,
-    "jquery": true
+    "jquery": true,
+    "es6": true
   },
   "rules": {
     "quotes": 0,
@@ -17,7 +20,7 @@
     "no-lone-blocks": 0
   },
   "globals": {
-    jQuery: true,
-    $: true
+    "jQuery": true,
+    "$": true
   }
 }

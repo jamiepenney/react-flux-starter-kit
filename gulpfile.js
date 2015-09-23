@@ -5,6 +5,7 @@ var connect = require('gulp-connect'); //Runs a local dev server
 var open = require('gulp-open'); //Open a URL in a web browser
 var browserify = require('browserify'); // Bundles JS
 var reactify = require('reactify');  // Transforms React JSX to JS
+var babelify = require('babelify');
 var source = require('vinyl-source-stream'); // Use conventional text streams with Gulp
 var concat = require('gulp-concat'); //Concatenates files
 var lint = require('gulp-eslint'); //Lint JS files, including JSX
@@ -14,13 +15,13 @@ var config = {
 	devBaseUrl: 'http://localhost',
 	paths: {
 		html: './src/*.html',
-		js: './src/**/*.js',
+		js: ['./src/**/*.js', './src/**/*.jsx'],
 		css: [
       		'node_modules/bootstrap/dist/css/bootstrap.min.css',
       		'node_modules/bootstrap/dist/css/bootstrap-theme.min.css'
     	],
 		dist: './dist',
-		mainJs: './src/main.js'
+		mainJs: './src/main.jsx'
 	}
 }
 
@@ -46,8 +47,8 @@ gulp.task('html', function() {
 });
 
 gulp.task('js', function() {
-	browserify(config.paths.mainJs)
-		.transform(reactify)
+	browserify(config.paths.mainJs, {debug: true})
+		.transform(babelify)
 		.bundle()
 		.on('error', console.error.bind(console))
 		.pipe(source('bundle.js'))
