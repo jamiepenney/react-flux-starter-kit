@@ -1,5 +1,5 @@
-# React with Flux Starter Kit
-This contains the completed environment setup that we walk through in detail in module 2 of ["Building Applications with React and Flux" on Pluralsight](http://www.pluralsight.com/author/cory-house).
+# React with Flux Example
+Forked from https://github.com/coryhouse/react-flux-starter-kit with an example app added in
 
 ##This starter kit gives you the following:
 - React, React Router, and Flux for ultra-responsive UI development  
@@ -21,9 +21,7 @@ This contains the completed environment setup that we walk through in detail in 
 4. `npm install` - Installs packages
 5. `npm install -g gulp` - Installs gulp globally. [Why globally?](http://stackoverflow.com/questions/22115400/why-do-we-need-to-install-gulp-globally-and-locally)
 5. `gulp` - Builds the project and opens your browser. 
-6. Navigate to [http://localhost:9005/](http://localhost:9005/) if your browser doesn't open automatically.
-
-You're now all set to [follow along with the course](http://www.pluralsight.com/author/cory-house)! 
+6. Navigate to [http://localhost:9005/](http://localhost:9005/) if your browser doesn't open automatically. 
 
 
 ##Change Log
